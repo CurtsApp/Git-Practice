@@ -1,0 +1,139 @@
+Git Steps
+
+Install git
+
+WinKey + R, open Run
+type 'cmd' push enter
+
+The command line will open
+
+Verify git is installed type 'git'
+See if command is found, if not install git. Close and reopen cmd after installation
+
+2. Verify identity
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+
+Type without last argument to see current value, set accordingly
+
+3. Navigate to empty directory you want to clone a new repo into
+
+cd - Change Directory
+cd /D D:/ - /D flag will allow you to change drive letters
+dir - directory will show you files and folders in current directory
+
+4. Clone existing repo
+git clone https://github.com/CurtsApp/Git-Practice
+
+You now have a local copy of the repo and have checked out the latest version of master
+
+5. Add a new file to the repo
+Open up explorer, and create a new text document. Type something inside the file and save it.
+
+6. View your untracked changes
+git status
+Notice the prompt that suggests you add your untracked changes. We don't want to track all changes, often project and
+library files are left out. All code and configuration files should be tracked though.
+
+7. Track your new file
+git add filename.txt
+Try using TAB to autocomplete your file name
+
+8. Verify newly tracked file
+git status
+Should be in green text
+
+9. Let's commit our change
+git commit
+This will put us into a walkthrough form to fill out our commit info.
+
+To exit the text editor hit ESC, the :wq (This should write in the bottom write hand corner, colon marks a command,
+w stands for write changes, q stands for quite. This is the save then quit command for the VI text editor it has a long
+history and sucks)
+
+10. We have now committed a change to our local master branch let's view it
+git status
+Notice we are now ahead of 'orgin/master' by 1 commit. Let's go verify that on github
+Go to https://github.com/CurtsApp/Git-Practice
+In the commits tab we should NOT see the commit we just made. Github will only ever show what's on the remote branch 
+orgin/
+
+11. Let's push our commit so that our team can pull down our changes
+git push
+You should get a login prompt at this point in time. This command can be more specific but without additional 
+arguments it pushes your current check'ed out branch 'branch-name' to 'orign/branch-name' in this case it pushes
+'master' to 'orgin/master' we will try this will different branches in a second.
+
+12. Check our status (This is our most used command, it's how we see what's going on right now)
+git status
+Notice we have a clean tree (no uncommitted changes) and we are up to date (we have no unpushed changes and are branched
+from the most recent pushed commit)
+
+13. Verify on Github
+Go to https://github.com/CurtsApp/Git-Practice
+Our commit should now appear in our commit history in GitHub
+
+14. Verify in command line
+git log
+Shows commits on checked out branch in chronological order from most recent -> less recent
+Notice HEAD -> master (This commit is the HEAD (most recent commit of the branch) of master (which we know is 
+refering to local master because it doesn't say 'origin'), origin/master, and origin/head.
+The master branch of the repo doesn't have to be called master, your's is called 'master-3.0' I believe. Origin/head
+marks the master branch in case the name is changed or it gets moved later down the line. When you clone a repo for 
+the first time your check out origin/head, which tends to also be origin/master.
+
+This screen shows us that our most recent commit is the head of both or local and remote master branch.
+
+15. Repeat the previous process to add another text file so we can practice staging and unstaging files later
+
+16. Modify a single line in each of your 2 files.
+
+17. Let's see our modifications
+git status
+Notice both the changed files should be listed
+
+18. Stage the changes for one file
+git add filename.txt
+Yes, this is the same add as adding a new file. This is a versitle command which is used for many things.
+Try using TAB to autocomplete your file name
+
+19. Unstage those changes with
+git reset HEAD filename.txt
+or
+git reset HEAD (this will unstage all staged changes, very useful)
+
+20. Verify those changes were unstaged
+git status
+Notice both should be listed in dark red
+
+21. Let's remind ourselves what we changed
+git diff
+This will list out our lines changes that are unstaged
+
+22. Let's commit just 1 file of changes. Stage one file again, like before
+git add filename.txt
+(fun fact 'git add .' will stage all changes, very useful)
+
+23. Let's remind ourselves of what we just staged
+git diff --staged
+This will list our lines changes only for changed files aka what we are about to commit as changes (very useful)
+
+24. Let's commit our single file of changes
+git commit
+Notice in the text dialog it warns you that not all of your changes are staged for this commit, this is okay
+
+25. Let's view our current status
+git status
+Notice we still have unstaged changes
+Notice we are now 1 commit ahead of 'origin/master'
+
+26. Let's see how we stack up in the log
+git log
+Notice our most recent commit is shown but 'origin/master' and 'origin/HEAD' are behind one commit, this is 
+because we have not pushed yet. Our team can not see our most recent changes yet.
+
+27. Let's try and push
+git push
+Our commit is pushed (not our unstaged working changes though)
+git log
+Notice the 'origin/master' and origin/HEAD tags have rejoined us at the most recent commit
