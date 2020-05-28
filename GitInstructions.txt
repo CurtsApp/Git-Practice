@@ -139,3 +139,5 @@ git push
 Our commit is pushed (not our unstaged working changes though)
 git log
 Notice the 'origin/master' and origin/HEAD tags have rejoined us at the most recent commit
+
+28. Check git status again to confirm
