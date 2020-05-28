@@ -54,7 +54,7 @@ w stands for write changes, q stands for quite. This is the save then quit comma
 history and sucks)
 
 10. We have now committed a change to our local master branch let's view it
-git status
+git status! It's worth it!
 Notice we are now ahead of 'orgin/master' by 1 commit. Let's go verify that on github
 Go to https://github.com/CurtsApp/Git-Practice
 In the commits tab we should NOT see the commit we just made. Github will only ever show what's on the remote branch 
@@ -67,7 +67,7 @@ arguments it pushes your current check'ed out branch 'branch-name' to 'orign/bra
 'master' to 'orgin/master' we will try this will different branches in a second.
 
 12. Check our status (This is our most used command, it's how we see what's going on right now)
-git status
+git status. yes you must
 Notice we have a clean tree (no uncommitted changes) and we are up to date (we have no unpushed changes and are branched
 from the most recent pushed commit)
 
@@ -140,4 +140,3 @@ Our commit is pushed (not our unstaged working changes though)
 git log
 Notice the 'origin/master' and origin/HEAD tags have rejoined us at the most recent commit
 
-28. Check git status again to confirm
