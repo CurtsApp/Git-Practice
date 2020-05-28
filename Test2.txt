@@ -1,1 +1,3 @@
 Learning git command lines
+It'll help us at the job. 
+Time to learn about branches
