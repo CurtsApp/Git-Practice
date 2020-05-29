@@ -54,6 +54,7 @@ w stands for write changes, q stands for quite. This is the save then quit comma
 history and sucks)
 
 10. We have now committed a change to our local master branch let's view it
+git status (Use -s for a shortened version)
 git status! It's worth it!
 Notice we are now ahead of 'orgin/master' by 1 commit. Let's go verify that on github
 Go to https://github.com/CurtsApp/Git-Practice
@@ -140,3 +141,4 @@ Our commit is pushed (not our unstaged working changes though)
 git log
 Notice the 'origin/master' and origin/HEAD tags have rejoined us at the most recent commit
 
+28. Sing a happy song
